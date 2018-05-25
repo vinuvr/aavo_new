@@ -5,8 +5,9 @@ import scrapy
 class task2Spider1(scrapy.Spider):
 	name = 'task2'
 	allowed_domains = ['www.avvo.com']
-	start_urls = ['https://www.avvo.com/adoption-lawyer/ny/new_york.html?&page=%s&sort=relevancy'%page for page in xrange(1,13)]
-	#rules = ( Rule(LinkExtractor(allow=('course-finder', ),restrict_xpaths=('//li[@class="pagination-page"]',)), callback='parse_items',follow=True), )
+	with open("pages.csv",'rb')as f:
+
+		start_urls =[url.strip() for url in f.readlines()] 
 
 	def parse(self, response):
 	        url=response.css(".row div.col-xs-8 a.v-serp-block-link::attr(href)").extract()

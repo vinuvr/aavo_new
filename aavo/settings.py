@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 	
-# Scrapy settings for aavo project
+#Scrapy settings for aavo project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -68,9 +68,9 @@ DOWNLOAD_DELAY = 30
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
- #   'aavo.pipelines.AavoPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'aavo.pipelines.AavoPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -92,3 +92,7 @@ DOWNLOAD_DELAY = 30
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+
+

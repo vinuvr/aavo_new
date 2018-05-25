@@ -5,20 +5,8 @@ import scrapy
 class Task3Spider(scrapy.Spider):
 	name = 'task3'	
 	allowed_domains = ['www.avvo.com']
-	#with open("url.csv")as f:
-	start_urls =['https://www.avvo.com/attorneys/10020-ny-elisabeth-mullen-1793038.html','https://www.avvo.com/attorneys/10004-ny-mirta-desir-3813985.html',
-'https://www.avvo.com/attorneys/10111-ny-yalda-haery-4552309.html',
-'https://www.avvo.com/attorneys/08830-nj-john-nachlinger-1602376.html',
-'https://www.avvo.com/attorneys/10023-ny-robin-fleischner-836471.html',
-'https://www.avvo.com/attorneys/11590-ny-alissa-vanhorn-1013255.html',
-'https://www.avvo.com/attorneys/10007-ny-clifford-greenberg-895360.html',
-'https://www.avvo.com/attorneys/11201-ny-marykatherine-brown-968292.html',
-'https://www.avvo.com/attorneys/11215-ny-brian-esser-1017149.html',
-'https://www.avvo.com/attorneys/11570-ny-anthony-brown-998056.html',
-'https://www.avvo.com/attorneys/10017-ny-helen-dukhan-1227960.html',
-'https://www.avvo.com/attorneys/10304-ny-karen-soren-941084.html',
-'https://www.avvo.com/attorneys/10007-ny-darren-bleier-4353662.html',]
-#[url.strip() for url in f.readlines()]
+	with open("url.csv")as f:
+		start_urls =[url.strip() for url in f.readlines()]
 		
 	def parse(self, response):
 
